@@ -27,7 +27,7 @@
 
 
 const char HELP[] =
-	"usage: ./<bin> double|int\n"
+	"usage: printb double|int\n"
 	"prefix: [0x] hexadecimal, [0b] binary, [0] octal\n"
         "suffix: [f] float, [l] long, [l] long long\n";
 
