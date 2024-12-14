@@ -29,7 +29,7 @@
 const char HELP[] =
 	"usage: printb double|int\n"
 	"prefix: [0x] hexadecimal, [0b] binary, [0] octal\n"
-        "suffix: [f] float, [l] long, [l] long long\n";
+        "suffix: [f] float, [l] long\n";
 
 struct num {
 	size_t size;
