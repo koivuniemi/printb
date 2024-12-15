@@ -28,8 +28,8 @@
 
 const char HELP[] =
 	"usage: printb double|int\n"
-	"prefix: [0x] hexadecimal, [0b] binary, [0] octal\n"
-        "suffix: [f] float, [l] long\n";
+	"prefix: [0x|0X] hexadecimal, [0b|0B] binary, [0] octal\n"
+        "suffix: [f|F] float, [s] short, [l] long, [L] long long\n";
 
 struct num {
 	size_t size;
@@ -79,10 +79,10 @@ struct num parse(char* s)
 	} else {
 		if (base == 2) n.val.u64 = strtol(s + 2, NULL, base);
 		else           n.val.u64 = strtol(s,     NULL, base);
-		n.size = 4;
-		if      (last_char == 'b' || last_char == 'B') n.size = 1;
-		else if (last_char == 's' || last_char == 'S') n.size = 2;
-		else if (last_char == 'l' || last_char == 'L') n.size = 8;
+		n.size = 1;
+		if      (last_char == 's') n.size = 2;
+		else if (last_char == 'l') n.size = 4;
+		else if (last_char == 'L') n.size = 8;
 	}
 	return n;
 }
